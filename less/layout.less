@@ -1,0 +1,231 @@
+html {
+	font-size: 62.5%;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	color: #292929;
+	font-family: 'Oswald', sans-serif;
+	font-size: 15px;
+	line-height: 1;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: calc(~"50% - 490px");
+	width: 980px;
+	background: url('../img/overlay.jpg');
+}
+
+#topbar {
+	height: 55px;
+	color: #ffffff;
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-align: right;
+	text-transform: uppercase;
+	line-height: 50px;
+	background-image: -webkit-linear-gradient(#1369b8, #54c0e3);
+	background-image: -o-linear-gradient(#1369b8, #54c0e3);
+	background-image: -moz-linear-gradient(#1369b8, #54c0e3);
+	background-image: linear-gradient(#1369b8, #54c0e3);
+	border-bottom: 4px solid @primary-colour;
+
+	@media (min-width: 768px) {
+		font-size: 2.2rem;
+	}
+
+	@media (min-width: 1022px) {
+		font-size: 2.6rem;
+	}
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 15px;
+		width: 100px;
+
+		@media (min-width: 768px) {
+			left: 42px;
+			width: auto;
+		}
+	}
+}
+
+header {
+	padding-bottom: 20px;
+	background-image: -webkit-linear-gradient(#d8d8d7 8%, #ffffff 30%);
+	background-image: -o-linear-gradient(#d8d8d7 8%, #ffffff 30%);
+	background-image: -moz-linear-gradient(#d8d8d7 8%, #ffffff 30%);
+	background-image: linear-gradient(#d8d8d7 8%, #ffffff 30%);
+
+	@media (min-width: 768px) {
+		min-height: 300px;
+		padding-bottom: 0;
+	}
+
+	.header-content {
+		overflow: hidden;
+
+		h2 {
+			margin: 0 0 10px 0;
+			color: @primary-colour;
+			font-size: 3.35rem;
+			text-transform: uppercase;
+		}
+
+		h3 {
+			margin: 0 0 15px 0;
+			font-size: 1.8rem;
+			font-weight: 100;
+		}
+
+		.left {
+			float: left;
+			width: 54%;
+			padding: 70px 0 0 0;
+
+			@media (min-width: 768px) {
+				width: 336px;
+				padding: 140px 0 0 18px;
+			}
+
+			@media (min-width:1022px) {
+				width: 461px;
+			}
+		}
+
+		.right {
+			float: right;
+			width: 46%;
+			padding: 65px 0 0 0;
+
+			@media (min-width: 768px) {
+				width: 384px;
+			}
+
+			@media (min-width:1022px) {
+				width: 512px;
+				padding: 14px 0 0 0;
+			}
+		}
+	}
+}
+
+footer {
+	padding: 43px 0 0 0;
+	background: #012068;
+	border-bottom: 1px solid #3f83c0;
+
+	.container {
+		position: relative;
+	}
+
+	section {
+		display: inline-block;
+		float: left;
+		position: relative;
+		margin: 0 0 20px 0;
+		color: #c1d8ed;
+		text-transform: uppercase;
+
+		@media (min-width: 768px) {
+			display: inline;
+			margin: 0 0 55px 0;
+		}
+
+		&.address {
+			width: 275px;
+
+			@media (min-width:1022px) {
+				width: 340px;
+			}
+		}
+
+		&.contact {
+			width: 270px;
+
+			@media (min-width:1022px) {
+				width: 300px;
+			}
+		}
+
+		&.find-us {
+			width: 175px;
+
+			@media (min-width:1022px) {
+				width: 200px;
+			}
+		}
+
+		h5 {
+			margin: 0 0 20px 0;
+			color: #485e92;
+			font-size: 1.8rem;
+		}
+
+		p, ul, li {
+			margin: 0;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 1.2rem;
+			line-height: 1.7;
+
+			a {
+				color: #c1d8ed;
+
+				&:hover, &.email {
+					color: #ffffff;
+					text-decoration: none;
+				}
+			}
+		}
+
+		.divider {
+			display: none;
+			position: absolute;
+			top: 0;
+			right: 20px;
+
+			@media (min-width: 768px) {
+				display: inline;
+			}
+		}
+	}
+
+	.copyright {
+		margin-bottom: 80px;
+		color: #7e8db2;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		line-height: 1.5;
+
+		@media (min-width: 768px) {
+			margin-bottom: 20px;
+			padding-left: 69px;
+		}
+
+		a {
+			color: #ffffff;
+		}
+	}
+
+	.gorilla-logo {
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+
+		@media (min-width: 768px) {
+			right: 0;
+		}
+	}
+
+	.bucks-logo {
+		position: absolute;
+		left: -26px;
+		bottom: 0;
+	}
+}
