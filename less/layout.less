@@ -13,12 +13,69 @@ body {
 	line-height: 1;
 }
 
-.overlay {
-	position: absolute;
+#modal-overlay {
+	position: fixed;
 	top: 0;
-	left: calc(~"50% - 490px");
-	width: 980px;
-	background: url('../img/overlay.jpg');
+	left: 0
+	right: 0
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+#modal {
+	position: fixed;
+	top: 10%;
+	left: 10%;
+	right: 10%;
+	bottom: 10%;
+	width: 80%;
+	height: 80%;
+	font-weight: 100;
+	line-height: 1.4;
+	background: #ffffff;
+	border-radius: 5px;
+	box-shadow: 4px 4px 8px 0px #333333;
+	overflow-y: auto; 
+
+	@media (min-width: 768px) {
+		left: 20%;
+		right: 20%;
+		width: 60%;
+	}
+
+	@media (min-width: 1022px) {
+		width: 60%;
+	}
+
+	header {
+		border-bottom: 1px solid #dddddd;
+	}
+
+	footer {
+		border-top: 1px solid #dddddd;
+
+		a {
+			padding: 6px 20px;
+			color: #000000;
+			background: #dddddd;
+		}
+	}
+
+	header, footer, .content {
+		padding: 25px;
+	}
+
+	.content {
+		li {
+			margin-bottom: 10px;
+
+			ol, ul {
+				margin-top: 10px;
+			}
+		}
+	}
 }
 
 #topbar {
@@ -56,7 +113,7 @@ body {
 	}
 }
 
-header {
+header#header {
 	padding-bottom: 20px;
 	background-image: -webkit-linear-gradient(#d8d8d7 8%, #ffffff 30%);
 	background-image: -o-linear-gradient(#d8d8d7 8%, #ffffff 30%);
@@ -71,17 +128,17 @@ header {
 	.header-content {
 		overflow: hidden;
 
+		h1 {
+			margin: 0 0 15px 0;
+			font-size: 1.8rem;
+			font-weight: 100;
+		}
+
 		h2 {
 			margin: 0 0 10px 0;
 			color: @primary-colour;
 			font-size: 3.35rem;
 			text-transform: uppercase;
-		}
-
-		h3 {
-			margin: 0 0 15px 0;
-			font-size: 1.8rem;
-			font-weight: 100;
 		}
 
 		.left {
@@ -116,7 +173,7 @@ header {
 	}
 }
 
-footer {
+footer#footer {
 	padding: 43px 0 0 0;
 	background: #012068;
 	border-bottom: 1px solid #3f83c0;

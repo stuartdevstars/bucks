@@ -17,7 +17,12 @@ $(function(){
 
 		var marker = new google.maps.Marker({
 			position: mapCenter,
-			title:"Hello World!"
+			title:"Hello World!",
+			url: "http://maps.apple.com/?daddr=Amersham+Road,+Chalfont+St+Giles,+Bucks+HP8+4RU"
+		});
+
+		google.maps.event.addListener(marker, 'click', function() {
+			window.location.href = this.url;
 		});
 
 		marker.setMap($Bucks.map);
@@ -29,5 +34,20 @@ $(function(){
 		var center = $Bucks.map.getCenter();
 		google.maps.event.trigger($Bucks.map, "resize");
 		$Bucks.map.setCenter(center);
+	});
+
+	$('#modal-overlay, #modal').fadeIn();
+
+	$("#close-modal").click(function(e){
+		$('#modal-overlay, #modal').fadeOut();
+		e.preventDefault()
+	});
+
+	$('html').click(function() {
+		$('#modal-overlay, #modal').fadeOut();
+	});
+
+	$('#modal').click(function(e){
+		e.stopPropagation();
 	});
 })

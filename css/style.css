@@ -956,12 +956,65 @@ body {
   font-size: 15px;
   line-height: 1;
 }
-.overlay {
-  position: absolute;
+#modal-overlay {
+  position: fixed;
   top: 0;
-  left: calc(50% - 490px);
-  width: 980px;
-  background: url('../img/overlay.jpg');
+  left: 0
+	right: 0
+	bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+#modal {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  width: 80%;
+  height: 80%;
+  font-weight: 100;
+  line-height: 1.4;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px 0px #333333;
+  overflow-y: auto;
+}
+@media (min-width: 768px) {
+  #modal {
+    left: 20%;
+    right: 20%;
+    width: 60%;
+  }
+}
+@media (min-width: 1022px) {
+  #modal {
+    width: 60%;
+  }
+}
+#modal header {
+  border-bottom: 1px solid #dddddd;
+}
+#modal footer {
+  border-top: 1px solid #dddddd;
+}
+#modal footer a {
+  padding: 6px 20px;
+  color: #000000;
+  background: #dddddd;
+}
+#modal header,
+#modal footer,
+#modal .content {
+  padding: 25px;
+}
+#modal .content li {
+  margin-bottom: 10px;
+}
+#modal .content li ol,
+#modal .content li ul {
+  margin-top: 10px;
 }
 #topbar {
   height: 55px;
@@ -971,6 +1024,9 @@ body {
   text-align: right;
   text-transform: uppercase;
   line-height: 50px;
+  background-image: -webkit-linear-gradient(#1369b8, #54c0e3);
+  background-image: -o-linear-gradient(#1369b8, #54c0e3);
+  background-image: -moz-linear-gradient(#1369b8, #54c0e3);
   background-image: linear-gradient(#1369b8, #54c0e3);
   border-bottom: 4px solid #1368b6;
 }
@@ -996,71 +1052,74 @@ body {
     width: auto;
   }
 }
-header {
+header#header {
   padding-bottom: 20px;
+  background-image: -webkit-linear-gradient(#d8d8d7 8%, #ffffff 30%);
+  background-image: -o-linear-gradient(#d8d8d7 8%, #ffffff 30%);
+  background-image: -moz-linear-gradient(#d8d8d7 8%, #ffffff 30%);
   background-image: linear-gradient(#d8d8d7 8%, #ffffff 30%);
 }
 @media (min-width: 768px) {
-  header {
+  header#header {
     min-height: 300px;
     padding-bottom: 0;
   }
 }
-header .header-content {
+header#header .header-content {
   overflow: hidden;
 }
-header .header-content h2 {
+header#header .header-content h1 {
+  margin: 0 0 15px 0;
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+header#header .header-content h2 {
   margin: 0 0 10px 0;
   color: #1368b6;
   font-size: 3.35rem;
   text-transform: uppercase;
 }
-header .header-content h3 {
-  margin: 0 0 15px 0;
-  font-size: 1.8rem;
-  font-weight: 100;
-}
-header .header-content .left {
+header#header .header-content .left {
   float: left;
   width: 54%;
   padding: 70px 0 0 0;
 }
 @media (min-width: 768px) {
-  header .header-content .left {
+  header#header .header-content .left {
     width: 336px;
     padding: 140px 0 0 18px;
   }
 }
 @media (min-width: 1022px) {
-  header .header-content .left {
+  header#header .header-content .left {
     width: 461px;
   }
 }
-header .header-content .right {
+header#header .header-content .right {
   float: right;
   width: 46%;
   padding: 65px 0 0 0;
 }
 @media (min-width: 768px) {
-  header .header-content .right {
+  header#header .header-content .right {
     width: 384px;
   }
 }
 @media (min-width: 1022px) {
-  header .header-content .right {
+  header#header .header-content .right {
     width: 512px;
     padding: 14px 0 0 0;
   }
 }
-footer {
+footer#footer {
   padding: 43px 0 0 0;
   background: #012068;
   border-bottom: 1px solid #3f83c0;
 }
-footer .container {
+footer#footer .container {
   position: relative;
 }
-footer section {
+footer#footer section {
   display: inline-block;
   float: left;
   position: relative;
@@ -1069,74 +1128,74 @@ footer section {
   text-transform: uppercase;
 }
 @media (min-width: 768px) {
-  footer section {
+  footer#footer section {
     display: inline;
     margin: 0 0 55px 0;
   }
 }
-footer section.address {
+footer#footer section.address {
   width: 275px;
 }
 @media (min-width: 1022px) {
-  footer section.address {
+  footer#footer section.address {
     width: 340px;
   }
 }
-footer section.contact {
+footer#footer section.contact {
   width: 270px;
 }
 @media (min-width: 1022px) {
-  footer section.contact {
+  footer#footer section.contact {
     width: 300px;
   }
 }
-footer section.find-us {
+footer#footer section.find-us {
   width: 175px;
 }
 @media (min-width: 1022px) {
-  footer section.find-us {
+  footer#footer section.find-us {
     width: 200px;
   }
 }
-footer section h5 {
+footer#footer section h5 {
   margin: 0 0 20px 0;
   color: #485e92;
   font-size: 1.8rem;
 }
-footer section p,
-footer section ul,
-footer section li {
+footer#footer section p,
+footer#footer section ul,
+footer#footer section li {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.2rem;
   line-height: 1.7;
 }
-footer section p a,
-footer section ul a,
-footer section li a {
+footer#footer section p a,
+footer#footer section ul a,
+footer#footer section li a {
   color: #c1d8ed;
 }
-footer section p a:hover,
-footer section ul a:hover,
-footer section li a:hover,
-footer section p a.email,
-footer section ul a.email,
-footer section li a.email {
+footer#footer section p a:hover,
+footer#footer section ul a:hover,
+footer#footer section li a:hover,
+footer#footer section p a.email,
+footer#footer section ul a.email,
+footer#footer section li a.email {
   color: #ffffff;
   text-decoration: none;
 }
-footer section .divider {
+footer#footer section .divider {
   display: none;
   position: absolute;
   top: 0;
   right: 20px;
 }
 @media (min-width: 768px) {
-  footer section .divider {
+  footer#footer section .divider {
     display: inline;
   }
 }
-footer .copyright {
+footer#footer .copyright {
   margin-bottom: 80px;
   color: #7e8db2;
   font-size: 0.9rem;
@@ -1144,25 +1203,25 @@ footer .copyright {
   line-height: 1.5;
 }
 @media (min-width: 768px) {
-  footer .copyright {
+  footer#footer .copyright {
     margin-bottom: 20px;
     padding-left: 69px;
   }
 }
-footer .copyright a {
+footer#footer .copyright a {
   color: #ffffff;
 }
-footer .gorilla-logo {
+footer#footer .gorilla-logo {
   position: absolute;
   right: 10px;
   bottom: 10px;
 }
 @media (min-width: 768px) {
-  footer .gorilla-logo {
+  footer#footer .gorilla-logo {
     right: 0;
   }
 }
-footer .bucks-logo {
+footer#footer .bucks-logo {
   position: absolute;
   left: -26px;
   bottom: 0;
@@ -1174,6 +1233,9 @@ footer .bucks-logo {
 }
 #products {
   min-height: 155px;
+  background-image: -webkit-linear-gradient(#e6e6e6 80%, #b4bfc3);
+  background-image: -o-linear-gradient(#e6e6e6 80%, #b4bfc3);
+  background-image: -moz-linear-gradient(#e6e6e6 80%, #b4bfc3);
   background-image: linear-gradient(#e6e6e6 80%, #b4bfc3);
 }
 @media (min-width: 768px) {
@@ -1240,6 +1302,9 @@ footer .bucks-logo {
   padding: 6px 30px 6px 20px;
   color: #ffffff;
   text-transform: uppercase;
+  background-image: -webkit-linear-gradient(#028bc5, #10b4ed);
+  background-image: -o-linear-gradient(#028bc5, #10b4ed);
+  background-image: -moz-linear-gradient(#028bc5, #10b4ed);
   background-image: linear-gradient(#028bc5, #10b4ed);
 }
 #products .product img {
@@ -1265,6 +1330,9 @@ footer .bucks-logo {
   text-align: center;
   text-transform: uppercase;
   line-height: 1.4;
+  background-image: -webkit-linear-gradient(#d8d8d6, #fefefe);
+  background-image: -o-linear-gradient(#d8d8d6, #fefefe);
+  background-image: -moz-linear-gradient(#d8d8d6, #fefefe);
   background-image: linear-gradient(#d8d8d6, #fefefe);
 }
 @media (min-width: 768px) {
