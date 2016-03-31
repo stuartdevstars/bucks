@@ -36,9 +36,12 @@ $(function(){
 		$Bucks.map.setCenter(center);
 	});
 
-	$('#modal-overlay, #modal').fadeIn();
+	$("#open-modal").click(function(e) {
+		$('#modal-overlay, #modal').fadeIn();
+		e.preventDefault()
+	});
 
-	$("#close-modal").click(function(e){
+	$("#close-modal").click(function(e) {
 		$('#modal-overlay, #modal').fadeOut();
 		e.preventDefault()
 	});
@@ -47,7 +50,7 @@ $(function(){
 		$('#modal-overlay, #modal').fadeOut();
 	});
 
-	$('#modal').click(function(e){
+	$('#modal, #open-modal').click(function(e){
 		e.stopPropagation();
 	});
 })

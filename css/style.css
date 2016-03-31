@@ -956,8 +956,12 @@ body {
   font-size: 15px;
   line-height: 1;
 }
-#modal-overlay {
+#modal-overlay,
+#modal {
+  display: none;
   position: fixed;
+}
+#modal-overlay {
   top: 0;
   left: 0
 	right: 0
@@ -967,13 +971,12 @@ body {
   background: rgba(0, 0, 0, 0.5);
 }
 #modal {
-  position: fixed;
-  top: 10%;
-  left: 10%;
-  right: 10%;
-  bottom: 10%;
-  width: 80%;
-  height: 80%;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  width: 90%;
+  height: 90%;
   font-weight: 100;
   line-height: 1.4;
   background: #ffffff;
@@ -985,11 +988,6 @@ body {
   #modal {
     left: 20%;
     right: 20%;
-    width: 60%;
-  }
-}
-@media (min-width: 1022px) {
-  #modal {
     width: 60%;
   }
 }
@@ -1009,12 +1007,19 @@ body {
 #modal .content {
   padding: 25px;
 }
+#modal .content > ol {
+  padding: 0;
+  list-style-position: inside;
+}
 #modal .content li {
   margin-bottom: 10px;
 }
 #modal .content li ol,
 #modal .content li ul {
   margin-top: 10px;
+}
+#modal .content li ul {
+  padding-left: 15px;
 }
 #topbar {
   height: 55px;
